@@ -1,0 +1,16 @@
+Phase 1: Ingestion
+User uploads all the files (pdf,cdr,csv) to the system. It then immediately uses python hashlib to compute its SHA-256 hash. then the SQLAlchemy toolkit executes an INSERT statement into our SQLite database that enters the hash and metadata of the files in an append only database.This is designed as an atomic transaction ( if the database insert fails for any reason, an HTTP 500/400 error is returned, and the entire upload process is aborted. This guarantees that no file can ever enter the analytical pipeline without first being cryptographically sealed in the ledger)
+
+Phase 2: Extraction and NLP 
+we will use Tessaract OCR to convert the images of files to editable text files.then spaCy will be used for entity extraction(NER) to pull out the information about people,vehicles,phone numbers etc.  Then we will use Rapidfuzz to find potential matches between cases with a fuzzy match score.
+
+Phase 3: Approval queue and graph construction 
+the system will wait for the approval from the analyst. ones approved we will move to graph math. 
+graph math- Backend NetworkX will create new nodes and edges from approved entites.
+Rendering - then Cytoscape.js will draw the graph on user's screen.
+
+Phase 4: Analysis and export 
+Time slider interaction: react will filter the nodes based on timestamp data.
+Algorithm execution: user selects two nodes and NetworkX.shortestpath() runs to give the connection between these nodes as an ouput.
+Report generation: FastAPI takes graph data , ledger hashes and the original uploaded data to compile them using Reportlab to generate a PDF
+

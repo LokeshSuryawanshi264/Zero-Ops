@@ -1,0 +1,17 @@
+ZeroOps (Zero Operations) is an IT operational model and ideology that leverages advanced automation, AI, and cloud-native infrastructure to enable systems to run with minimal to zero human intervention.  It represents the evolution beyond DevOps, shifting the paradigm from "you build it, you run it" to "you build it, it runs itself."
+
+FastAPI is a modern, high-performance Python web framework used to build APIs and backend services quickly and efficiently.  Created by Sebastián Ramírez and first released in 2018, it is designed for developing RESTful APIs, microservices, and ML-driven platforms using Python 3.7+ standards.
+
+NetworkX is a Python library that stores graph data in in-memory Python objects (such as Graph, DiGraph, MultiGraph, or MultiDiGraph) rather than in a persistent database.  This design means that graph data is loaded into the computer's RAM every time the script runs, allowing for fast analysis of smaller-scale networks but requiring manual reloading of datasets for subsequent operations. 
+
+The Digital Personal Data Protection (DPDP) Act, 2023 is India’s first comprehensive data protection law, enacted to safeguard the personal data of individuals while enabling lawful data processing.  It establishes a rights-based framework where consent is the primary basis for processing digital personal data, granting individuals rights to access, correct, and erase their information.
+
+A chain of custody hash-ledger is a blockchain-based system that uses cryptographic hashing to create an immutable, tamper-evident record of the handling, control, and transfer of digital evidence or assets.  In this model, each piece of evidence is assigned a unique hash value (a digital fingerprint) which is stored on a distributed ledger, while the actual evidence is often stored off-chain to preserve privacy and scalability
+
+Tamper evident describes a security feature or packaging designed to provide clear, visible evidence if a product, container, or document has been opened, altered, or interfered with
+
+ICJS stands for the Interoperable Criminal Justice System (also referred to as the Integrated Criminal Justice System).  It is a landmark e-Governance initiative of the Ministry of Home Affairs (MHA) in India, conceptualized by the e-Committee of the Supreme Court.
+
+Neo4j is a native graph database management system implemented in Java, designed to store, manage, and query highly connected data efficiently.  Unlike traditional relational databases that use tables and rows, Neo4j organizes data as a network of nodes (entities) and relationships (edges), allowing for rapid traversal of complex connections without the performance penalties of SQL joins.
+
+Named Entity Recognition (NER) is a Natural Language Processing (NLP) task that identifies and classifies key entities in unstructured text into predefined categories such as persons, organizations, locations, and dates.

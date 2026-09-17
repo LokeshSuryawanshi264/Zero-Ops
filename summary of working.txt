@@ -1,0 +1,21 @@
+We upload FIRs , CDRs (CD recordings) and CSVs to the system. It then uses OCR( it basically converts images of texts to text files that can be edited) and NLP to pull information of people,aliases,phone numbers , vehicle info etc.) The system flags potential matches between cases with a fuzzy match score. A human analyst will need to approve the link though. Now we plot a graph from our information. The graph will have nodes(color coded to represent different entity) e.g. people , phone numbers , vehicle , bank accounts. and there will be edges(lines basically) that will represent the relationship between two such nodes. the lines will be color coded too to represent different sorts of connections ( like owned by , telephoned etc.) so when you click on this line(edge) an evidence card showing exact source of the information will pop up. there will be a time slider in the graph so we can navigate forward and backwards in time. using the graph we can potentially do pre crime discovery. for ex. investigators can spot sudden spikes in communication between nodes immediately before crime date. 
+We will use a Tamper-Evident ledger --> When a file is uploaded to the system its backend will calculate its hash value which is a unique fingerprint. Even if any small changes are made to that file its hash value will change. and this hash along with upload time, uploaders ID and details , file metadata etc will be stored into an append only secure database table (SQLite). so this record cannot be edited or deleted by anyone.
+Report generation: it will be automated. when an analyst is ready and clicks generate report our fastAPI backend will use libraries like Report lab or python-docx to generate a report file. This file will compile all approved entity connections,the original source data,tamper enident ledger. The graph will play a big role in this. 
+-shortest path : if investigators select two distant suspects on the graph , the system will use graph algorithms to instantly write out how they are connected in the report.
+-centrality: using graph metrics ( e.g. Degree Centrality) the report can highlight most connected entity (like a phone number or a person).
+
+Tech Stack :
+1)Frontend:
+ 	i)React.js/Next.js  
+	ii)Cytoscape.js or react force graph for interactive 2D graphs
+2)Backend and API:
+	i)FastAPI(python): its extremely fast and supports heavy AI/ML tasks like OCR/NLP.
+	ii)NetworkX(python): mathematical graph engine running on backend. sends all the calculated info to frontend to be drawn.
+3)Data processing pipeline(AI/ML):
+	i)Tessaract OCR(pytesseract)
+	ii)spaCy:core NLP framework used for NER(named entity recognition)
+	iii)Rapidfuzz: used for detecting similarities in strings
+4)Database and security :
+	i)SQLite(for prototype)/Neo4j(for real world scenario) : SQLite for storing user data and tamper evident ledger.
+	ii)Python hashlib(SHA-256): cryptographic library for calculating digital fingerprint.
+	iii)ReportLab/python-docx: to generate PDF/Wordfile for report.
