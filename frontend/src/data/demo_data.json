@@ -102,7 +102,7 @@
       "date": "2026-09-01",
       "isResolution": true,
       "evidence": {
-        "sourceFile": "FIR_AI_Hashing_Engine",
+        "sourceFile": "#FIR_0239",
         "snippet": "AI Identity Resolution: 'Ravi Kumar' (Case A) and 'R. Kumar' (Case B) share identical burner phone (+91 98765 43210) and have 89% phonetic name similarity. Flagged for analyst review.",
         "confidence": 0.89,
         "verified": false
