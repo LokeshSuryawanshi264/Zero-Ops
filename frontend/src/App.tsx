@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import AppLayout from './components/layout/AppLayout';
 import EmptyPage from './pages/EmptyPage';
+import UploadPage from './pages/UploadPage';
+import GraphPage from './pages/GraphPage';
 
 function App() {
   return (
@@ -8,8 +10,8 @@ function App() {
       <AppLayout>
         <Routes>
           <Route path="/" element={<Navigate to="/upload" replace />} />
-          <Route path="/upload" element={<EmptyPage title="Upload & Ingestion" />} />
-          <Route path="/graph" element={<EmptyPage title="Graph View" />} />
+          <Route path="/upload" element={<UploadPage />} />
+          <Route path="/graph" element={<GraphPage />} />
           <Route path="/reports" element={<EmptyPage title="Reports" />} />
         </Routes>
       </AppLayout>

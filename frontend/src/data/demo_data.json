@@ -1,0 +1,112 @@
+{
+  "nodes": [
+    { "id": "p1", "name": "Ravi Kumar", "type": "person", "cluster": "A" },
+    { "id": "p2", "name": "Rajeev Builder", "type": "person", "cluster": "A" },
+    { "id": "l1", "name": "Andheri East Site", "type": "location", "cluster": "A" },
+    { "id": "ph1", "name": "+91 98765 43210", "type": "phone", "cluster": "bridge", "isBridge": true },
+    
+    { "id": "p3", "name": "R. Kumar", "type": "person", "cluster": "B" },
+    { "id": "p4", "name": "Vikram Singh", "type": "person", "cluster": "B" },
+    { "id": "l2", "name": "Nhava Sheva Port", "type": "location", "cluster": "B" },
+    { "id": "v1", "name": "MH 04 AB 1234", "type": "vehicle", "cluster": "B" }
+  ],
+  "links": [
+    { 
+      "source": "p1", 
+      "target": "p2", 
+      "label": "Extorted", 
+      "date": "2026-08-12",
+      "evidence": {
+        "sourceFile": "FIR_104_Andheri.pdf",
+        "snippet": "...the complainant, Mr. Rajeev Builder, stated that he received multiple threats from an individual identifying himself as Ravi Kumar demanding ₹50 Lakhs protection money...",
+        "confidence": 0.95,
+        "verified": true
+      }
+    },
+    { 
+      "source": "p1", 
+      "target": "l1", 
+      "label": "Seen At", 
+      "date": "2026-08-10",
+      "evidence": {
+        "sourceFile": "FIR_104_Andheri.pdf",
+        "snippet": "...CCTV footage confirms the suspect Ravi Kumar was present near the Andheri East construction site on the night of August 10th...",
+        "confidence": 0.88,
+        "verified": true
+      }
+    },
+    { 
+      "source": "p1", 
+      "target": "ph1", 
+      "label": "Owns", 
+      "date": "2026-08-12",
+      "evidence": {
+        "sourceFile": "CDR_August_2026.csv",
+        "snippet": "[Row 442] Subscriber Info: Ravi Kumar. Number: +91 98765 43210. Plan: Prepaid. Activation: 2026-02-14.",
+        "confidence": 0.99,
+        "verified": true
+      }
+    },
+    { 
+      "source": "p3", 
+      "target": "ph1", 
+      "label": "Owns", 
+      "date": "2026-08-25",
+      "evidence": {
+        "sourceFile": "Arms_Smuggling_Intel_Report.pdf",
+        "snippet": "...an intercepted communication revealed that the suspect alias 'R. Kumar' operates using the burner number +91 98765 43210 to coordinate logistics...",
+        "confidence": 0.92,
+        "verified": false
+      }
+    },
+    { 
+      "source": "p3", 
+      "target": "p4", 
+      "label": "Associated With", 
+      "date": "2026-08-28",
+      "evidence": {
+        "sourceFile": "FIR_221_NhavaSheva.pdf",
+        "snippet": "...Vikram Singh was apprehended during the raid. Under interrogation, he confessed to receiving instructions from a superior he only knows as R. Kumar...",
+        "confidence": 0.85,
+        "verified": true
+      }
+    },
+    { 
+      "source": "p3", 
+      "target": "l2", 
+      "label": "Seen At", 
+      "date": "2026-08-28",
+      "evidence": {
+        "sourceFile": "FIR_221_NhavaSheva.pdf",
+        "snippet": "...Security logs at Nhava Sheva Port show an entry pass issued to R. Kumar on the evening the shipment arrived...",
+        "confidence": 0.89,
+        "verified": true
+      }
+    },
+    { 
+      "source": "p4", 
+      "target": "v1", 
+      "label": "Owns", 
+      "date": "2026-08-28",
+      "evidence": {
+        "sourceFile": "RTO_Database_Extract.csv",
+        "snippet": "[Row 12] Registration: MH 04 AB 1234. Owner: Vikram Singh. Make: Mahindra Scorpio. Status: Active.",
+        "confidence": 1.0,
+        "verified": true
+      }
+    },
+    {
+      "source": "p1",
+      "target": "p3",
+      "label": "Resolved Identity",
+      "date": "2026-09-01",
+      "isResolution": true,
+      "evidence": {
+        "sourceFile": "AI_Resolution_Engine",
+        "snippet": "AI Identity Resolution: 'Ravi Kumar' (Case A) and 'R. Kumar' (Case B) share identical burner phone (+91 98765 43210) and have 85% phonetic name similarity. Flagged for analyst review.",
+        "confidence": 0.89,
+        "verified": false
+      }
+    }
+  ]
+}
